@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<ConstructionMaterials>
+    <material id="1">
+
+        <type >Wallpaper</type>
+        <country>Germany</country>
+        <price currency="EUR">30</price>
+        <firm>Rasch</firm>
+        <InternalWork>Yes</InternalWork>
+        <ExternalWork>No</ExternalWork>
+    </material>
+    <material id="2">
+        <type >Slate</type>
+        <country>Russia</country>
+        <price currency="EUR">50</price>
+        <firm>DOM</firm>
+        <InternalWork>No</InternalWork>
+        <ExternalWork>Yes</ExternalWork>
+    </material>
+</ConstructionMaterials>

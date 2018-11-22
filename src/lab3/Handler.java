@@ -1,17 +1,21 @@
 package lab3;
 
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Handler extends DefaultHandler {
+    private Map<Integer, String> data = new HashMap<>();
 
-    private Map<Integer, String> data = new HashMap<Integer, String>();
-    private int id;
-    private String element;
+    public Handler() {
+        //list = new ArrayList<>();
+    }
 
     @Override
     public void startDocument() throws SAXException {
@@ -25,32 +29,21 @@ public class Handler extends DefaultHandler {
 
     @Override
     public void startElement(String namespace, String localName, String qName, Attributes attr) {
-       element = qName;
-       if(element.equals("material")){
-           id = Integer.parseInt(attr.getValue(0));
-           if(element.equals("type")) element = qName;
-       }
+        System.out.print(qName + " ");
     }
-
     @Override
     public void endElement(String namespace, String localName, String qName) throws SAXException {
-       element = "";
-       id = -1;
+/*if (qName.equalsIgnoreCase("material")){
+
+}*/
     }
 
     @Override
-    public void characters(char [] ch, int start, int end) {
-        if (element.equals("type")) {
-        String typeStr = new String(ch, start, end);
-        data.put(id,typeStr);
-
+    public void characters(char[] ch, int start, int end) {
+        System.out.print(new java.lang.String(ch, start, end));
     }
-
-
-}
 
     public Map<Integer, String> getData() {
         return data;
     }
 }
-
